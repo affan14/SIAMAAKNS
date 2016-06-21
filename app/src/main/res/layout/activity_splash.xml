@@ -1,0 +1,71 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_sp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="@color/colorPrimary"
+    android:backgroundTint="@color/colorPrimary"
+    tools:context="com.akns.siamaakns.SplashActivity">
+
+    <!-- The primary full-screen view. This can be replaced with whatever view
+         is needed to present your content, e.g. VideoView, SurfaceView,
+         TextureView, etc. -->
+    <RelativeLayout
+        android:id="@+id/fullscreen_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/sp_akns"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="invisible"
+            android:contentDescription="@string/akns_title"
+            android:src="@drawable/akns_logo" />
+
+        <TextView
+            android:id="@+id/sp_siama"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sp_akns"
+            android:visibility="invisible"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:keepScreenOn="true"
+            android:text="@string/splash_title_abbr"
+            android:textColor="@color/text_bright"
+            android:textSize="20sp" />
+
+        <TextView
+            android:visibility="invisible"
+            android:id="@+id/sp_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sp_siama"
+            android:gravity="center"
+            android:keepScreenOn="true"
+            android:text="@string/splash_title"
+            android:textColor="@color/text_bright"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:visibility="invisible"
+            android:id="@+id/sp_akns_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sp_title"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:keepScreenOn="true"
+            android:text="@string/akns_title"
+            android:textColor="@color/text_bright"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+</FrameLayout>

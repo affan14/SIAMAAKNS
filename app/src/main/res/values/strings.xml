@@ -1,0 +1,73 @@
+<resources>
+    <string name="app_name">SIAMA AKNS</string>
+
+    <string name="android_client">39826818301-f1vgkv87amf2936thlk8k02cbpftfr43.apps.googleusercontent.com</string>
+    <string name="web_client">39826818301-vdu4cptjb8im9nt1pq50fbg379gujtvu.apps.googleusercontent.com</string>
+
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="splash_title">STUDENT INFORMATION SYSTEM</string>
+    <string name="splash_title_abbr">\"SIAMA\"</string>
+    <string name="akns_title">AKADEMI KOMUNITAS NEGERI SUMENEP</string>
+    <string name="title_activity_home">Home</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="title_activity_fullscreen">FullscreenActivity</string>
+
+    <!-- ActionBar-->
+    <string name="action_about">About</string>
+    <string name="action_quit">Quit</string>
+
+    <!-- Menu -->
+    <string name="nav_home">Home</string>
+    <string name="nav_notification">Announcement</string>
+    <string name="nav_agenda">Agenda</string>
+    <string name="nav_reg_status">Registration Status</string>
+    <string name="nav_grades">Grades</string>
+    <string name="nav_schedule">Schedule</string>
+    <string name="nav_logout">Logout</string>
+
+    <!-- On Back Pressed -->
+    <string name="toast_on_back_press">Press once again to exit app</string>
+
+    <string name="btn_reg_text">Clik To Register</string>
+    <string name="reg_status_caption">Your registration status is : </string>
+    <string name="smt1" translatable="false">Semester 1</string>
+    <string name="smt2" translatable="false">Semester 2</string>
+    <string name="smt3" translatable="false">Semester 3</string>
+    <string name="smt4" translatable="false">Semester 4</string>
+    <string name="task_1">Task 1</string>
+    <string name="task_2">Task 2</string>
+    <string name="middle_exam">Middle Exam</string>
+    <string name="final_exam">Final Exam</string>
+    <string name="final_grades">Final Grades</string>
+    <string name="not_published_notice">Sorry, the grades for the subject you requsted is not published</string>
+    <string name="reg_name">Name</string>
+    <string name="reg_email">Email</string>
+    <string name="reg_nrp">NRP</string>
+    <string name="reg_phone">Handphone</string>
+    <string name="reg_payment_no">Payment No.</string>
+    <string name="reg_photo">Payment Photo</string>
+    <string name="reg_browse">Browse File</string>
+    <string name="activity_registration">Herregistration</string>
+    <string name="error_no_nrp_found">Login Fault, Your email account is not related with any data in our database.</string>
+    <string name="loading_schedule">Loading schedule....</string>
+    <string name="no_data">No data to display</string>
+    <string name="text_about">Student Information System\nAkademi Komunitas Negeri Sumenep\n\"S I A M A\"\nDeveloper : Moh. Affan\n as his Final Project of D2 Informatic Enginering of Akademi Komunitas Negeri Sumenep\n Copyright (c) 2016</string>
+    <string name="exit_confirmation">Are You sure want to quit ?</string>
+    <string name="msg_sending_data">Sending data to server....</string>
+    <string name="reg_connection_error">Connection Error</string>
+    <string name="err_malformed_url">Error : Malformed URL</string>
+    <string name="err_io_exception">Error : IO Exception</string>
+    <string name="err">Error</string>
+    <string name="err_empty_name">Name should not empty</string>
+    <string name="err_empty_nrp">NRP should not empty</string>
+    <string name="err_empty_email">Email should not empty</string>
+    <string name="err_empty_phone">Phone number should not empty</string>
+    <string name="err_empty_payment_no">Payment Number should not empty</string>
+    <string name="err_empty_payment_pict">Payment picture should not empty</string>
+    <string name="reg_success_feedback">Success : the registration is done and success</string>
+    <string name="reg_fail_feedback">Registration fail, please try again</string>
+    <string name="succes">Success</string>
+    <string name="failure">Failure</string>
+</resources>

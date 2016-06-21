@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background_card"
+    android:orientation="vertical"
+    android:paddingBottom="15dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="15dp">
+
+    <TextView
+        android:id="@+id/grades_subject"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/akns_title"
+        android:textAppearance="@style/TextTitlePrimary" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/text_dark" />
+
+    <LinearLayout
+        android:id="@+id/top_1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/grades_task_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/task_1"
+            android:layout_marginRight="5dp"
+            android:textAppearance="@style/TextTitleSecondary" />
+
+        <TextView
+            android:id="@+id/grades_task_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/task_2"
+            android:layout_marginRight="5dp"
+            android:textAppearance="@style/TextTitleSecondary" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/top_2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/grades_middle_exam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/middle_exam"
+            android:layout_marginRight="5dp"
+            android:textAppearance="@style/TextTitleSecondary" />
+
+        <TextView
+            android:id="@+id/grades_final_exam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/final_exam"
+            android:layout_marginRight="5dp"
+            android:textAppearance="@style/TextTitleSecondary" />
+        <TextView
+            android:id="@+id/grades_final"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/final_grades"
+            android:layout_marginRight="5dp"
+            android:textAppearance="@style/TextTitleSecondary" />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/not_published_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/not_published_notice"
+        android:layout_marginRight="5dp"
+        android:visibility="gone"
+        android:textAppearance="@style/TextTitleSecondary"
+        tools:ignore="RtlHardcoded" />
+
+</LinearLayout>

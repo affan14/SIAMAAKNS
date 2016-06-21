@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background_card"
+    android:orientation="vertical"
+    android:paddingBottom="15dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="15dp">
+
+    <TextView
+        android:id="@+id/agenda_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/akns_title"
+        android:textAppearance="@style/TextTitlePrimary" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/text_dark" />
+
+    <TextView
+        android:id="@+id/agenda_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:text="@string/nav_agenda"
+        android:textAppearance="@style/TextTitleDate"
+        android:layout_marginBottom="15dp"/>
+
+    <TextView
+        android:id="@+id/agenda_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/nav_agenda"
+        android:textAppearance="@style/TextTitleSecondary" />
+</LinearLayout>

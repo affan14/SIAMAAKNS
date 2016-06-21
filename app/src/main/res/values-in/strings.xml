@@ -1,0 +1,69 @@
+<resources>
+    <string name="app_name">SIAMA AKNS</string>
+
+    <string name="android_client">39826818301-f1vgkv87amf2936thlk8k02cbpftfr43.apps.googleusercontent.com</string>
+    <string name="web_client">39826818301-vdu4cptjb8im9nt1pq50fbg379gujtvu.apps.googleusercontent.com</string>
+
+    <string name="dummy_button">Tombol Contoh</string>
+    <string name="dummy_content">Contoh Isi</string>
+    <string name="splash_title">SISTEM INFORMASI MAHASISWA</string>
+    <string name="splash_title_abbr">\"SIAMA\"</string>
+    <string name="akns_title">AKADEMI KOMUNITAS NEGERI SUMENEP</string>
+    <string name="title_activity_home">Beranda</string>
+    <string name="navigation_drawer_open">Buka Menu</string>
+    <string name="navigation_drawer_close">Tutup Menu</string>
+    <string name="title_activity_fullscreen">FullscreenActivity</string>
+
+    <!-- ActionBar-->
+    <string name="action_about">Tentang</string>
+    <string name="action_quit">Tutup Aplikasi</string>
+
+    <!-- Menu -->
+    <string name="nav_home">Beranda</string>
+    <string name="nav_notification">Pengumuman</string>
+    <string name="nav_agenda">Agenda</string>
+    <string name="nav_reg_status">Status Pendaftaran</string>
+    <string name="nav_grades">Nilai</string>
+    <string name="nav_schedule">Jadwal</string>
+    <string name="nav_logout">Keluar</string>
+
+    <!-- On Back Pressed -->
+    <string name="toast_on_back_press">Tekan sekali lagi untuk keluar</string>
+
+    <string name="btn_reg_text">Klik untuk mendaftar</string>
+    <string name="reg_status_caption">Status pendaftaran Anda adalah :</string>
+    <string name="final_exam">UAS</string>
+    <string name="final_grades">NA</string>
+    <string name="middle_exam">UTS</string>
+    <string name="task_1">Tugas 1</string>
+    <string name="task_2">Tugas 2</string>
+    <string name="not_published_notice">Maaf, nilai untuk mata kuliah yang Anda minta tidak dipublikasi</string>
+    <string name="reg_name">Nama</string>
+    <string name="reg_email">Email</string>
+    <string name="reg_nrp">NRP</string>
+    <string name="reg_phone">No. HP</string>
+    <string name="reg_payment_no">No. Pembayaran</string>
+    <string name="reg_photo">Gambar Pembayaran</string>
+    <string name="reg_browse">Pilih File</string>
+    <string name="activity_registration">Daftar Ulang</string>
+    <string name="error_no_nrp_found">Login Gagal, Email Anda tidak ditemukan di database kami.</string>
+    <string name="loading_schedule">Sedang memuat jadwal....</string>
+    <string name="no_data">Tidak ada data untuk ditampilkan</string>
+    <string name="text_about">Sistem Informasi Mahasiswa\nAkademi Komunitas Negeri Sumenep\n\"S I A M A\"\nDeveloper : Moh. Affan\n as his Final Project of D2 Informatic Enginering of Akademi Komunitas Negeri Sumenep\n Copyright (c) 2016</string>
+    <string name="exit_confirmation">Apakah Anda yakin ingin keluar ?</string>
+    <string name="msg_sending_data">Mengirim data ke server....</string>
+    <string name="reg_connection_error">Kesalahan Sambungan</string>
+    <string name="err_malformed_url">Kesalahan : URL salah</string>
+    <string name="err_io_exception">Kesalahan : IO Exception</string>
+    <string name="err">Kesalahan</string>
+    <string name="err_empty_name">Nama tidak boleh kosong</string>
+    <string name="err_empty_nrp">NRP tidak boleh kosong</string>
+    <string name="err_empty_email">Email tidak boleh kosong</string>
+    <string name="err_empty_phone">No. HP tidak boleh kosong</string>
+    <string name="err_empty_payment_no">Nomor bukti pembayaran tidak boleh kosong</string>
+    <string name="err_empty_payment_pict">Gambar bukti tidak boleh kosong</string>
+    <string name="reg_success_feedback">Berhasil : Pendaftaran yang Anda lakukan sukses</string>
+    <string name="reg_fail_feedback">Pendafataran gagal, silahkan mencoba kembali</string>
+    <string name="succes">Berhasil</string>
+    <string name="failure">Gagal</string>
+</resources>
