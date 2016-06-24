@@ -44,4 +44,11 @@
         <item name="android:shadowDx">1</item>
         <item name="android:shadowDy">1</item>
     </style>
+    <style name="ButtonPrimary2">
+        <item name="android:background">@drawable/cust_bg_nu</item>
+        <item name="android:textColor">@color/text_bright</item>
+        <item name="android:shadowColor">@color/text_secondary</item>
+        <item name="android:shadowDx">1</item>
+        <item name="android:shadowDy">1</item>
+    </style>
 </resources>

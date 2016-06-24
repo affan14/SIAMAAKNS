@@ -53,7 +53,7 @@
                 <TextView
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:text=""
+                    android:text="@string/password"
                     android:textColor="@color/text_dark" />
 
                 <EditText
@@ -77,7 +77,7 @@
 
     <Button
         android:id="@+id/btn_reg"
-        style="@style/ButtonPrimary"
+        style="@style/ButtonPrimary2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/container_lg_c"

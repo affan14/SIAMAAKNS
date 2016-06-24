@@ -66,4 +66,8 @@
     <string name="reg_fail_feedback">Pendafataran gagal, silahkan mencoba kembali</string>
     <string name="succes">Berhasil</string>
     <string name="failure">Gagal</string>
+    <string name="action_sign_in_short">Masuk</string>
+    <string name="action_sign_in">Masuk atau mendaftar</string>
+    <string name="password">Sandi</string>
+    <string name="title_activity_login_completion">Login</string>
 </resources>
