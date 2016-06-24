@@ -5,6 +5,7 @@ import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,6 +28,7 @@ import org.json.JSONObject;
 public class RegStatusFragment extends Fragment {
 
     TextView smt1, smt2, smt3, smt4;
+    FloatingActionButton fab;
 
     public RegStatusFragment() {
 
@@ -40,6 +42,18 @@ public class RegStatusFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.content_reg_status, container, false);
+        fab = (FloatingActionButton) rootView.findViewById(R.id.fab_reg);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment fragment = RegFragment.newInstance();
+                FragmentManager fragmentManager = getFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.content_layout, fragment);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+            }
+        });
         Button btn_reg = (Button) rootView.findViewById(R.id.btn_reg);
         btn_reg.setOnClickListener(new View.OnClickListener() {
             @Override

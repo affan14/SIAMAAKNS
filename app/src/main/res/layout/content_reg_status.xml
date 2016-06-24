@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
@@ -21,43 +20,60 @@
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:paddingTop="15dp">
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="@style/TextTitleSecondary"
+            android:layout_marginBottom="10dp"
             android:text="@string/reg_status_caption"
-            android:layout_marginBottom="10dp"/>
+            android:textAppearance="@style/TextTitleSecondary" />
+
         <TextView
             android:id="@+id/smt_1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="@style/TextTitleSecondary"
-            android:text="@string/smt1"/>
+            android:text="@string/smt1"
+            android:textAppearance="@style/TextTitleSecondary" />
+
         <TextView
             android:id="@+id/smt_2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="@style/TextTitleSecondary"
-            android:text="@string/smt2"/>
+            android:text="@string/smt2"
+            android:textAppearance="@style/TextTitleSecondary" />
+
         <TextView
             android:id="@+id/smt_3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="@style/TextTitleSecondary"
-            android:text="@string/smt3"/>
+            android:text="@string/smt3"
+            android:textAppearance="@style/TextTitleSecondary" />
+
         <TextView
             android:id="@+id/smt_4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="@style/TextTitleSecondary"
-            android:text="@string/smt4"/>
+            android:text="@string/smt4"
+            android:textAppearance="@style/TextTitleSecondary" />
     </LinearLayout>
 
     <Button
-        android:layout_below="@id/container_status"
+        android:visibility="gone"
+        android:id="@+id/btn_reg"
+        style="@style/ButtonPrimary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/btn_reg"
-        android:text="@string/btn_reg_text"
-        style="@style/ButtonPrimary"/>
+        android:layout_below="@id/container_status"
+        android:text="@string/btn_reg_text" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_reg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_reg_add"
+        android:tint="@color/text_bright"
+        android:tintMode="add"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 </RelativeLayout>
