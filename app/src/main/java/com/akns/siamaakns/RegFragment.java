@@ -79,6 +79,14 @@ public class RegFragment extends Fragment implements View.OnClickListener {
 
         btnBrowse.setOnClickListener(this);
         btnSubmit.setOnClickListener(this);
+        etGambarBukti.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                Intent intent = new Intent(Intent.ACTION_PICK);
+                intent.setType("image/jpg");
+                startActivityForResult(intent, REQUEST_CODE);
+            }
+        });
         return rootView;
     }
 

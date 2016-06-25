@@ -74,5 +74,13 @@
     <string name="action_sign_in">Sign in or register</string>
     <string name="action_sign_in_short">Sign in</string>
     <string name="password">Password</string>
+    <string name="place_of_birth">Place of birth</string>
+    <string name="date_of_birth">Date of birth</string>
+    <string name="gender">Gender</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="religion">Religion</string>
+    <string name="address">Address</string>
+    <string name="website_blog">Website/Blog</string>
 
 </resources>

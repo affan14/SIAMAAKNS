@@ -70,4 +70,5 @@
     <string name="action_sign_in">Masuk atau mendaftar</string>
     <string name="password">Sandi</string>
     <string name="title_activity_login_completion">Login</string>
+    <string name="place_of_birth">Tempat Lahir</string>
 </resources>
