@@ -2,10 +2,11 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
-    android:gravity="center_horizontal"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/bg_default"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -15,9 +16,10 @@
     <ImageView
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/akns"
         android:layout_marginBottom="20dp"
-        android:contentDescription="@string/akns_title"/>
+        android:contentDescription="@string/akns_title"
+        android:src="@drawable/akns" />
+
     <TextView
         android:id="@+id/hm_title"
         android:layout_width="match_parent"
@@ -38,6 +40,7 @@
         android:textColor="@color/text_dark"
         android:textSize="18sp"
         android:textStyle="bold" />
+
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -45,12 +48,12 @@
 
         <ImageView
             android:id="@+id/img_slide"
-            android:visibility="invisible"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
+            android:contentDescription="@string/app_name"
             android:scaleType="centerInside"
             android:src="@drawable/slide_a"
-            android:contentDescription="@string/app_name"/>
+            android:visibility="invisible" />
     </FrameLayout>
 </LinearLayout>

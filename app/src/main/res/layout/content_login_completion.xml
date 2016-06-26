@@ -1,6 +1,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/bg_default"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -65,22 +66,15 @@
             </TableRow>
         </TableLayout>
 
-        <ImageView
-            android:id="@+id/f_reg_img"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            android:contentDescription="@string/app_name"
-            android:scaleType="centerInside"
-            android:visibility="gone" />
     </LinearLayout>
 
     <Button
-        android:id="@+id/btn_reg"
+        android:id="@+id/btn_login"
         style="@style/ButtonPrimary2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/container_lg_c"
-        android:text="@string/btn_reg_text" />
+        android:text="@string/login"
+        android:layout_marginTop="10dp"/>
 
 </RelativeLayout>

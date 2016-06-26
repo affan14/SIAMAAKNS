@@ -6,7 +6,6 @@ import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,7 +27,7 @@ import org.json.JSONObject;
 public class RegStatusFragment extends Fragment {
 
     TextView smt1, smt2, smt3, smt4;
-    FloatingActionButton fab;
+    FloatingActionButton fabReg, fabLogin;
 
     public RegStatusFragment() {
 
@@ -42,11 +41,23 @@ public class RegStatusFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.content_reg_status, container, false);
-        fab = (FloatingActionButton) rootView.findViewById(R.id.fab_reg);
-        fab.setOnClickListener(new View.OnClickListener() {
+        fabReg = (FloatingActionButton) rootView.findViewById(R.id.fab_reg);
+        fabReg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Fragment fragment = RegFragment.newInstance();
+                FragmentManager fragmentManager = getFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.content_layout, fragment);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+            }
+        });
+        fabLogin = (FloatingActionButton) rootView.findViewById(R.id.fab_login);
+        fabLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment fragment = LoginCompletionFragment.newInstance();
                 FragmentManager fragmentManager = getFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.content_layout, fragment);
@@ -84,10 +95,10 @@ public class RegStatusFragment extends Fragment {
                             String reg_smt2 = infoObj.getString(C.COL_SMT2);
                             String reg_smt3 = infoObj.getString(C.COL_SMT3);
                             String reg_smt4 = infoObj.getString(C.COL_SMT4);
-                            smt1.setText(smt1.getText()+ " : "+reg_smt1);
-                            smt2.setText(smt2.getText()+ " : "+reg_smt2);
-                            smt3.setText(smt3.getText()+ " : "+reg_smt3);
-                            smt4.setText(smt4.getText()+ " : "+reg_smt4);
+                            smt1.setText(smt1.getText() + " : " + reg_smt1);
+                            smt2.setText(smt2.getText() + " : " + reg_smt2);
+                            smt3.setText(smt3.getText() + " : " + reg_smt3);
+                            smt4.setText(smt4.getText() + " : " + reg_smt4);
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }

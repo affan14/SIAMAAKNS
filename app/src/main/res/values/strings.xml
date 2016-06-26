@@ -82,5 +82,12 @@
     <string name="religion">Religion</string>
     <string name="address">Address</string>
     <string name="website_blog">Website/Blog</string>
+    <string name="dicipline">Dicipline</string>
+    <string name="class_name">Class</string>
+    <string name="semester">Semester</string>
+    <string name="save_btn">Save</string>
+    <string name="wait_word_1">Waiting password sms for</string>
+    <string name="wait_word_2">You can manually input the password while waiting timeout</string>
+    <string name="login">Login</string>
 
 </resources>

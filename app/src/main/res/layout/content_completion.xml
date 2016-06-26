@@ -122,7 +122,7 @@
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/custom_edittext"
                 android:spinnerMode="dropdown"
-                android:entries="@arrays/religions"/>
+                android:entries="@array/religions"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -183,6 +183,65 @@
                 android:background="@drawable/custom_edittext"
                 android:inputType="textWebEditText" />
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/dicipline"
+                android:textColor="@color/text_dark" />
+
+            <Spinner
+                android:id="@+id/f_com_prodi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/custom_edittext"
+                android:spinnerMode="dropdown"
+                android:entries="@array/prodi"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/class_name"
+                android:textColor="@color/text_dark" />
+
+            <Spinner
+                android:id="@+id/f_com_kelas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/custom_edittext"
+                android:spinnerMode="dropdown"
+                android:entries="@array/kelas"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Periode"
+                android:textColor="@color/text_dark" />
+
+            <Spinner
+                android:id="@+id/f_com_period"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/custom_edittext"
+                android:spinnerMode="dropdown"
+                android:entries="@array/angkatan"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/semester"
+                android:textColor="@color/text_dark" />
+
+            <Spinner
+                android:id="@+id/f_com_smt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/custom_edittext"
+                android:spinnerMode="dropdown"
+                android:entries="@array/smt"/>
 
         </LinearLayout>
 
@@ -192,6 +251,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/container_status_1"
-            android:text="@string/btn_reg_text" />
+            android:text="@string/save_btn" />
     </RelativeLayout>
 </ScrollView>
