@@ -2,6 +2,7 @@ package com.akns.siamaakns;
 
 import android.app.Fragment;
 import android.app.ProgressDialog;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -54,7 +55,12 @@ public class ScheduleFragment extends Fragment {
                             JSONObject agObj = jsonArray.getJSONObject(i);
                             String img = agObj.getString(C.COL_IMG_FILENAME);
                             String img_path = C.SERVER_TESTING_ROOT_O + "img/" + img;
-                            new LoadImage(getActivity(), img_sch).execute(img_path);
+                            Bitmap bitmap = BitmapCache.getBitmapCache().getBitmap(img_path);
+                            if(bitmap!=null) {
+                                img_sch.setImage(ImageSource.bitmap(bitmap));
+                            } else {
+                                new LoadImage(getActivity(), img_sch).execute(img_path);
+                            }
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }

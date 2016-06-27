@@ -14,7 +14,6 @@ import com.android.volley.toolbox.Volley;
 public class ThisApp extends Application {
     public static final String T = ThisApp.class.getSimpleName();
     private RequestQueue mRequestQueue;
-    ImageLoader mImageLoader;
     private static ThisApp instance;
 
     @Override
@@ -50,4 +49,5 @@ public class ThisApp extends Application {
             mRequestQueue.cancelAll(tag);
         }
     }
+
 }

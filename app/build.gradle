@@ -46,4 +46,5 @@ dependencies {
     compile 'com.google.android.gms:play-services-auth:8.4.0'
     compile 'com.google.android.gms:play-services-gcm:8.4.0'
     compile 'junit:junit:4.12'
+    compile 'com.wdullaer:materialdatetimepicker:2.3.0'
 }
