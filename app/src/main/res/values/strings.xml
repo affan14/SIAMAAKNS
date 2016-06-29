@@ -89,5 +89,7 @@
     <string name="wait_word_1">Waiting password sms for</string>
     <string name="wait_word_2">You can manually input the password while waiting timeout</string>
     <string name="login">Login</string>
+    <string name="err_empty_password">Password should not empty</string>
+    <string name="msg_no_internet_connection">You are not connected to Internet</string>
 
 </resources>

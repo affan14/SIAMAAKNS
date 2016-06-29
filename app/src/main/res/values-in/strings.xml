@@ -85,4 +85,6 @@
     <string name="wait_word_1">Menunggu sms sandi selama :</string>
     <string name="wait_word_2">Anda dapat secara manual memasukkan sandi ketika waktu berakhir</string>
     <string name="login">Masuk</string>
+    <string name="err_empty_password">Sandi tidak boleh kosong</string>
+    <string name="msg_no_internet_connection">Anda tidak tersambung ke Internet</string>
 </resources>

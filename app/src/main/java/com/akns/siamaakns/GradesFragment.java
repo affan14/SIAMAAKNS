@@ -123,7 +123,7 @@ public class GradesFragment extends Fragment implements AdapterView.OnItemClickL
                 mSwipeRefreshLayout.setRefreshing(false);
             }
         });
-        ThisApp.getInstance().addToRequestQueue(request);
+        MyApplication.getInstance().addToRequestQueue(request);
     }
 
     @Override

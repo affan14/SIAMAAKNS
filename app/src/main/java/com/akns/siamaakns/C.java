@@ -33,6 +33,7 @@ public class C {
     public static final String SERVER_TESTING_ROOT = "http://192.168.173.1/siama/";
 
     //online testing
+    public static final String SERVER_IP_TESTING_O = "192.168.43.52";
     public static final String SERVER_TESTING_O = "http://192.168.43.52/siama/api/";
     public static final String SERVER_TESTING_ROOT_O = "http://192.168.43.52/siama/";
 

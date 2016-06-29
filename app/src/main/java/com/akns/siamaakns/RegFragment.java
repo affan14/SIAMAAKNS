@@ -103,12 +103,12 @@ public class RegFragment extends Fragment implements View.OnClickListener {
             intent.setType("image/jpg");
             startActivityForResult(intent, REQUEST_CODE);
         } else if (v == btnSubmit) {
-            if (isValidEditText(etNama, getString(R.string.err_empty_name))){
-                if (isValidEditText(etNrp, getString(R.string.err_empty_nrp))){
-                    if (isValidEditText(etEmail, getString(R.string.err_empty_email))){
-                        if (isValidEditText(etNoHp, getString(R.string.err_empty_phone))){
-                            if (isValidEditText(etNoBukti, getString(R.string.err_empty_payment_no))){
-                                if (isValidEditText(etGambarBukti, getString(R.string.err_empty_payment_pict))){
+            if (FormUtil.isValidEditText(etNama, getString(R.string.err_empty_name))){
+                if (FormUtil.isValidEditText(etNrp, getString(R.string.err_empty_nrp))){
+                    if (FormUtil.isValidEditText(etEmail, getString(R.string.err_empty_email))){
+                        if (FormUtil.isValidEditText(etNoHp, getString(R.string.err_empty_phone))){
+                            if (FormUtil.isValidEditText(etNoBukti, getString(R.string.err_empty_payment_no))){
+                                if (FormUtil.isValidEditText(etGambarBukti, getString(R.string.err_empty_payment_pict))){
                                     PostData postData = new PostData();
                                     postData.execute(etNrp.getText().toString(),
                                             etNama.getText().toString(),
@@ -153,17 +153,6 @@ public class RegFragment extends Fragment implements View.OnClickListener {
         return path;
     }
 
-    public static boolean isValidEditText(EditText editText, String errMsg) {
-        String text = editText.getText().toString().trim();
-        editText.requestFocus();
-        editText.setError(null);
-
-        if (text.length() == 0) {
-            editText.setError(Html.fromHtml("<font color='red'>" + errMsg + "</font>"));
-            return false;
-        }
-        return true;
-    }
 
     public class PostData extends AsyncTask<String, Void, String> {
         private ProgressDialog progressDialog;
@@ -267,11 +256,11 @@ public class RegFragment extends Fragment implements View.OnClickListener {
                 final NiftyDialogBuilder niftyDialogBuilder = NiftyDialogBuilder.getInstance(getActivity());
                 niftyDialogBuilder
                         .withTitle(getString(R.string.err))
-                        .withTitleColor(getResources().getColor(R.color.text_bright))
+                        .withTitleColor(getResources().getColor(R.color.swipe_color_2))
                         .withDividerColor(getResources().getColor(R.color.text_color))
                         .withMessage(s)
-                        .withMessageColor(getResources().getColor(R.color.text_bright))
-                        .withDialogColor(getResources().getColor(R.color.swipe_color_2))
+                        .withMessageColor(getResources().getColor(R.color.text_dark))
+                        .withDialogColor(getResources().getColor(R.color.bg_default))
                         .withDuration(700)
                         .withEffect(Effectstype.Fadein)
                         .withButton1Text("OK")

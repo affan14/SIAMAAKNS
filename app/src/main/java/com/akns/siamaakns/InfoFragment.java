@@ -101,7 +101,7 @@ public class InfoFragment extends Fragment implements SwipeRefreshLayout.OnRefre
                 swipeRefreshLayout.setRefreshing(false);
             }
         });
-        ThisApp.getInstance().addToRequestQueue(request);
+        MyApplication.getInstance().addToRequestQueue(request);
     }
 
     @Override

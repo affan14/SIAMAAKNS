@@ -1,11 +1,13 @@
 package com.akns.siamaakns;
 
 import android.annotation.SuppressLint;
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.NonNull;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -16,7 +18,6 @@ import android.widget.Toast;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
-import com.android.volley.toolbox.JsonObjectRequest;
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
 import com.google.android.gms.appindexing.Action;
@@ -35,7 +36,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class SplashActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
+public class SplashActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener, ConnectivityReceiver.ConnectivityReceiverListener {
 
     private static final int RC_SIGN_IN = 0;
     private static final boolean AUTO_HIDE = true;
@@ -109,14 +110,17 @@ public class SplashActivity extends AppCompatActivity implements GoogleApiClient
             @Override
             public void onAnimationStart(Animator animator) {
             }
-            // openHome or signIn for testing and build
+
             @Override
             public void onAnimationEnd(Animator animator) {
-                /*signIn();*/signIn();
+                /*signIn();*/
+                signIn();
             }
+
             @Override
             public void onAnimationCancel(Animator animator) {
             }
+
             @Override
             public void onAnimationRepeat(Animator animator) {
             }
@@ -128,25 +132,28 @@ public class SplashActivity extends AppCompatActivity implements GoogleApiClient
                 YoYo.with(Techniques.SlideInDown)
                         .duration(ANIM_DURATION)
                         .withListener(new Animator.AnimatorListener() {
-                    @Override
-                    public void onAnimationStart(Animator animator) {
-                    }
-                    @Override
-                    public void onAnimationEnd(Animator animator) {
-                        findViewById(R.id.sp_siama).setVisibility(View.VISIBLE);
-                        findViewById(R.id.sp_title).setVisibility(View.VISIBLE);
-                        findViewById(R.id.sp_akns_text).setVisibility(View.VISIBLE);
-                        YoYo.with(Techniques.RollIn).duration(ANIM_DURATION).playOn(findViewById(R.id.sp_siama));
-                        YoYo.with(Techniques.RollIn).duration(ANIM_DURATION).playOn(findViewById(R.id.sp_title));
-                        YoYo.with(Techniques.RollIn).duration(ANIM_DURATION).withListener(mAnimListener).playOn(findViewById(R.id.sp_akns_text));
-                    }
-                    @Override
-                    public void onAnimationCancel(Animator animator) {
-                    }
-                    @Override
-                    public void onAnimationRepeat(Animator animator) {
-                    }
-                }).playOn(findViewById(R.id.sp_akns));
+                            @Override
+                            public void onAnimationStart(Animator animator) {
+                            }
+
+                            @Override
+                            public void onAnimationEnd(Animator animator) {
+                                findViewById(R.id.sp_siama).setVisibility(View.VISIBLE);
+                                findViewById(R.id.sp_title).setVisibility(View.VISIBLE);
+                                findViewById(R.id.sp_akns_text).setVisibility(View.VISIBLE);
+                                YoYo.with(Techniques.RollIn).duration(ANIM_DURATION).playOn(findViewById(R.id.sp_siama));
+                                YoYo.with(Techniques.RollIn).duration(ANIM_DURATION).playOn(findViewById(R.id.sp_title));
+                                YoYo.with(Techniques.RollIn).duration(ANIM_DURATION).withListener(mAnimListener).playOn(findViewById(R.id.sp_akns_text));
+                            }
+
+                            @Override
+                            public void onAnimationCancel(Animator animator) {
+                            }
+
+                            @Override
+                            public void onAnimationRepeat(Animator animator) {
+                            }
+                        }).playOn(findViewById(R.id.sp_akns));
             }
         }, 200);
 
@@ -244,8 +251,8 @@ public class SplashActivity extends AppCompatActivity implements GoogleApiClient
 
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
-//        findViewById(R.id.sign_container).setVisibility(View.VISIBLE);
-//        YoYo.with(Techniques.SlideInUp).duration(ANIM_DURATION).playOn(findViewById(R.id.sign_container));
+        Snackbar snackbar = Snackbar.make(findViewById(R.id.fullscreen_content), getString(R.string.msg_no_internet_connection), Snackbar.LENGTH_LONG);
+        snackbar.show();
     }
 
     // step 5
@@ -282,44 +289,63 @@ public class SplashActivity extends AppCompatActivity implements GoogleApiClient
         finish();
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        MyApplication.getInstance().setConnectivityListener(this);
+    }
+
     /**
      * @param email
      * @return String NRP if success or null if fault
      */
-    private void checkNRPbyEmail(String email){
-        String url = C.SERVER_TESTING_O + "get_nrp_by_email.php?e="+email;
-        JsonArrayRequest request = new JsonArrayRequest(url, new Response.Listener<JSONArray>() {
-            @Override
-            public void onResponse(JSONArray jsonArray) {
-                if (jsonArray.length() > 0) {
-                    try {
-                        JSONObject agObj = jsonArray.getJSONObject(0);
-                        String nrp = agObj.getString(C.COL_NRP);
-                        if (nrp!=null) {
-                            AccountInfo.getInstance().setNrp(nrp);
-                            openHome();
-                        } else {
-                            Toast.makeText(SplashActivity.this, getString(R.string.error_no_nrp_found), Toast.LENGTH_SHORT).show();
-                            Auth.GoogleSignInApi.signOut(mGoogleApiClient).setResultCallback(new ResultCallback<Status>() {
-                                @Override
-                                public void onResult(@NonNull Status status) {
-                                    if (status.isSuccess()) {
-                                        signIn();
+    private void checkNRPbyEmail(String email) {
+        if (ConnectivityReceiver.isConnected()) {
+            String url = C.SERVER_TESTING_O + "get_nrp_by_email.php?e=" + email;
+            JsonArrayRequest request = new JsonArrayRequest(url, new Response.Listener<JSONArray>() {
+                @Override
+                public void onResponse(JSONArray jsonArray) {
+                    if (jsonArray.length() > 0) {
+                        try {
+                            JSONObject agObj = jsonArray.getJSONObject(0);
+                            String nrp = agObj.getString(C.COL_NRP);
+                            if (nrp != null) {
+                                AccountInfo.getInstance().setNrp(nrp);
+                                openHome();
+                            } else {
+                                Toast.makeText(SplashActivity.this, getString(R.string.error_no_nrp_found), Toast.LENGTH_SHORT).show();
+                                Auth.GoogleSignInApi.signOut(mGoogleApiClient).setResultCallback(new ResultCallback<Status>() {
+                                    @Override
+                                    public void onResult(@NonNull Status status) {
+                                        if (status.isSuccess()) {
+                                            signIn();
+                                        }
                                     }
-                                }
-                            });
+                                });
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
                         }
-                    } catch (JSONException e) {
-                        e.printStackTrace();
                     }
                 }
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError volleyError) {
-                Toast.makeText(SplashActivity.this, volleyError.getMessage(), Toast.LENGTH_SHORT).show();
-            }
-        });
-        ThisApp.getInstance().addToRequestQueue(request);
+            }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError volleyError) {
+                    Toast.makeText(SplashActivity.this, volleyError.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            });
+            MyApplication.getInstance().addToRequestQueue(request);
+        } else {
+            Snackbar snackbar = Snackbar.make(findViewById(R.id.fullscreen_content), getString(R.string.msg_no_internet_connection), Snackbar.LENGTH_LONG);
+            snackbar.show();
+        }
+    }
+
+    @Override
+    public void onNetworkConnectionChanged(boolean isConnected) {
+        if (!isConnected) {
+            Snackbar snackbar = Snackbar.make(findViewById(R.id.fullscreen_content), getString(R.string.msg_no_internet_connection), Snackbar.LENGTH_LONG);
+            snackbar.show();
+        }
     }
 }

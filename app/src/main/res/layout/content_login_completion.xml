@@ -40,7 +40,7 @@
                     android:textColor="@color/text_dark" />
 
                 <EditText
-                    android:id="@+id/f_com_nrp"
+                    android:id="@+id/f_log_nrp"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:background="@drawable/custom_edittext"
@@ -58,7 +58,7 @@
                     android:textColor="@color/text_dark" />
 
                 <EditText
-                    android:id="@+id/f_cum_ver"
+                    android:id="@+id/f_log_pass"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:background="@drawable/custom_edittext"

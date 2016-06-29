@@ -2,6 +2,9 @@ apply plugin: 'com.android.application'
 //apply plugin: 'com.google.gms.google-services'
 
 android {
+    packagingOptions {
+        exclude 'AndroidManifest.xml'
+    }
     signingConfigs {
         config {
             keyAlias 'affan14'
@@ -23,6 +26,9 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            signingConfig signingConfigs.config
         }
     }
     productFlavors {
@@ -46,4 +52,7 @@ dependencies {
     compile 'com.google.android.gms:play-services-auth:8.4.0'
     compile 'com.google.android.gms:play-services-gcm:8.4.0'
     compile 'junit:junit:4.12'
+    compile 'com.wdullaer:materialdatetimepicker:2.3.0'
+    compile files('libs/sqlitedbhelper.jar')
+    compile 'com.github.deano2390:MaterialShowcaseView:1.1.0'
 }

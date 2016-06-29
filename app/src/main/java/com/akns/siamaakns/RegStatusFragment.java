@@ -111,7 +111,7 @@ public class RegStatusFragment extends Fragment {
                 Toast.makeText(getActivity(), volleyError.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
-        ThisApp.getInstance().addToRequestQueue(request);
+        MyApplication.getInstance().addToRequestQueue(request);
         return rootView;
     }
 }

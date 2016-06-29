@@ -21,6 +21,7 @@ public class LoadImage extends AsyncTask<String, Void, Bitmap> {
     ProgressDialog progressDialog;
     SubsamplingScaleImageView imgView;
     Context context;
+    String photourl;
 
     public LoadImage(Context context, SubsamplingScaleImageView imgView) {
         this.imgView = imgView;
@@ -33,7 +34,7 @@ public class LoadImage extends AsyncTask<String, Void, Bitmap> {
 
     @Override
     protected Bitmap doInBackground(String... params) {
-        String photourl = params[0];
+        photourl = params[0];
         Bitmap photoBitmap = null;
         try {
             InputStream in = new URL(photourl).openStream();
@@ -46,7 +47,8 @@ public class LoadImage extends AsyncTask<String, Void, Bitmap> {
 
     @Override
     protected void onPostExecute(Bitmap bitmap) {
-        imgView.setImage(ImageSource.cachedBitmap(bitmap));
+        BitmapCache.getBitmapCache().putBitmap(photourl, bitmap);
+        imgView.setImage(ImageSource.bitmap(bitmap));
         progressDialog.dismiss();
     }
 }
