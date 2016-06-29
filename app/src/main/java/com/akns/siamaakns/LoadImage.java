@@ -20,6 +20,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class LoadImage extends AsyncTask<String, Void, Bitmap> {
     ProgressDialog progressDialog;
     SubsamplingScaleImageView imgView;
+    String photourl;
     Context context;
     String photourl;
 
